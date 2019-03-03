@@ -13,9 +13,15 @@
  * @version   GIT: <0>
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
+$estVisiteurConnecte = estVisiteurConnnecte ();
+$estComptableConnecte = estComptableConnnecte();
 
-if ($estConnecte) {
-    include 'vues/v_accueil.php';
-} else {
+if ($estVisiteurConnecte){
+    include 'vues/v_accueilVisiteur.php';
+} elseif ($estComptableConnecte)
+    {
+   include 'vues/v_accueilComptable.php';
+}else 
+    {
     include 'vues/v_connexion.php';
 }
